@@ -11,7 +11,13 @@ var https = require('https');
 var server = https.createServer(app);
 var io = require('socket.io').listen(server, options);
 server.listen(PORT);
+app.use('/client', express.static(__dirname + '/client'));
 
+app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/index.html');
+});
+io.set('transports', ['xhr-polling']);
+io.set('polling duration', 10);
 //подписываемся на событие соединения нового клиента
 io.sockets.on('connection', function (client) {
     //подписываемся на событие message от клиента
