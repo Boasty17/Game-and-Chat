@@ -16,8 +16,7 @@ app.use('/client', express.static(__dirname + '/client'));
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
 });
-io.set('transports', ['xhr-polling']);
-io.set('polling duration', 10);
+// io.set('transports', ['xhr-polling']);
 //подписываемся на событие соединения нового клиента
 io.sockets.on('connection', function (client) {
     //подписываемся на событие message от клиента
