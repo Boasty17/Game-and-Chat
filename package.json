@@ -1,0 +1,22 @@
+{
+  "name": "spacesomething",
+  "version": "0.0.1",
+  "description": "alfa",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Shumilov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "install": "^0.8.7",
+    "npm": "^4.4.4",
+    "phaser": "^2.6.2",
+    "socket.io": "^1.7.3"
+  }
+}
