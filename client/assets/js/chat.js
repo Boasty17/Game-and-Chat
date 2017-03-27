@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var socket = io.connect('http://chat-and-game.herokuapp.com:8008');
+    var socket = io.connect('https://chat-and-game.herokuapp.com:5000');
     var name = 'Guest_' + (Math.round(Math.random() * 10000));
     var messages = $("#messages");
     var message_txt = $("#message_text")
