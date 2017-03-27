@@ -1,16 +1,15 @@
 var express = require('express');
-var path = require('path');
 var app = express();
-var https = require('https');
-var server = https.createServer(app);
-var port = process.env.PORT || 3000;
-var portSoket = process.env.PORT || 5000;
-var options = {
-//    'log level': 0
-};
-var io = require('socket.io').listen(server, options);
-io.sockets.on('connection', function (client) {
-    //подписываемся на событие message от клиента
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+var PORT = process.env.PORT || 8080;
+
+app.use(express.static(__dirname + '/client'));
+app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/index.html');
+});
+
+io.on('connection', function (socket) {
     client.on('message', function (message) {
         try {
             //посылаем сообщение себе
@@ -23,10 +22,4 @@ io.sockets.on('connection', function (client) {
         }
     });
 });
-
-app.use(express.static('client'));
-var router = express.Router();
-
-// Listen for requests
-server.listen(portSoket);
-app.listen(port);
+server.listen(PORT);
