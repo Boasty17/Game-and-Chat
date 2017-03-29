@@ -6,8 +6,8 @@ $(document).ready(function () {
     var message_txt = $("#message_text")
     $('.chat .nick').text(name);
 
-    function msg(nick, message) {
-        var m = '<div class="msg">' +
+    function msg(nick, message, classCss) {
+        var m = '<div class=' + classCss + '>' +
             '<span class="user">' + safe(nick) + ':</span> '
             + safe(message) +
             '</div>';
@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
 
     function msg_system(message) {
-        var m = '<div class="msg system">' + safe(message) + '</div>';
+        var m = '<div class="msg_system">' + safe(message) + '</div>';
         messages
             .append(m)
             .scrollTop(messages[0].scrollHeight);
@@ -32,8 +32,13 @@ $(document).ready(function () {
     });
 
     socket.on('message', function (data) {
-        msg(data.name, data.message);
-        console.log(data);
+        var you = 'msg',
+            our = 'o_msg';
+        if(data.name == name) {
+            msg(data.name, data.message, you);
+        } else {
+            msg(data.name, data.message, our);
+        }
         message_txt.focus();
     });
 
