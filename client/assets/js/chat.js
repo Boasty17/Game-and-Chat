@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var socket = io.connect('https://chat-and-game.herokuapp.com:3000');
+    var socket = io.connect('https://chat-and-game.herokuapp.com:443');
     // var socket = io.connect('http://localhost:3000');
     var name = 'Guest_' + (Math.round(Math.random() * 10000));
     var messages = $("#messages");
@@ -33,6 +33,7 @@ $(document).ready(function () {
 
     socket.on('message', function (data) {
         msg(data.name, data.message);
+        console.log(data);
         message_txt.focus();
     });
 
