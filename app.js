@@ -9,7 +9,8 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
 });
 
-io.on('connection', function (client) {
+io.sockets.on('connection', function (client) {
+    console.log('on connect')
     client.on('message', function (message) {
         try {
             //посылаем сообщение себе
