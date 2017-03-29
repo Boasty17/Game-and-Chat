@@ -25,12 +25,12 @@ $(document).ready(function () {
 
     socket.on('connecting', function () {
         messages.append('<div class="msg_system"></div>'.scrollTop(messages[0].scrollHeight));
-        $('.msg_system').addClass('.ok')
+        $('.msg_system').addClass('off')
     });
 
     socket.on('connect', function () {
         messages.append('<div class="msg_system"></div>').scrollTop(messages[0].scrollHeight);
-        $('.msg_system').addClass('.off')
+        $('.msg_system').addClass('ok')
     });
 
     socket.on('message', function (data) {
