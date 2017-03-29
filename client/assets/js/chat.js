@@ -7,10 +7,10 @@ $(document).ready(function () {
     $('.chat .nick').text(name);
 
     function msg(nick, message, classCss) {
-        var m = '<div class=' + classCss + '>' +
+        var m = '<div class="cont"><div class=' + classCss + '>' +
             '<span class="user">' + safe(nick) + '</span> '
             + safe(message) +
-            '</div>';
+            '</div></div>';
         messages
             .append(m)
             .scrollTop(messages[0].scrollHeight);

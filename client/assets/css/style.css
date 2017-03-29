@@ -38,7 +38,7 @@
     display: flex;
 }
 #message_text{
-
+    resize: none;
     font-size: 1.3em;
     margin-left: 8px;
 }
@@ -68,6 +68,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
+    align-self: flex-end;
 }
 .o_msg .user {
     color: #1314ff !important;
@@ -87,4 +88,10 @@
     width: 10px;
     height: 10px;
     margin-bottom: 10px;
+}
+.cont {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
