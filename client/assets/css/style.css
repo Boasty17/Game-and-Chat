@@ -70,7 +70,21 @@
     border-top-left-radius: 20px;
 }
 .o_msg .user {
-    color: #1314ff;
+    color: #1314ff !important;
     float: right;
     margin-left: 10px;
+}
+.ok {
+    background: #00ff2b;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 10px;
+}
+.off {
+    background: #ff001e;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 10px;
 }

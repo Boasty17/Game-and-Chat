@@ -24,11 +24,13 @@ $(document).ready(function () {
     }
 
     socket.on('connecting', function () {
-        msg_system('Соединение...');
+        messages.append('<div class="msg_system"></div>'.scrollTop(messages[0].scrollHeight));
+        $('.msg_system').addClass('.ok')
     });
 
     socket.on('connect', function () {
-        msg_system('Соединение установлено!');
+        messages.append('<div class="msg_system"></div>').scrollTop(messages[0].scrollHeight);
+        $('.msg_system').addClass('.off')
     });
 
     socket.on('message', function (data) {
