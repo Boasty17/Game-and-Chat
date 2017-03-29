@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function msg(nick, message, classCss) {
         var m = '<div class=' + classCss + '>' +
-            '<span class="user">' + safe(nick) + ':</span> '
+            '<span class="user">' + safe(nick) + '</span> '
             + safe(message) +
             '</div>';
         messages

@@ -57,3 +57,20 @@
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
+.user {
+    color: #67200c;
+    margin-right: 10px;
+}
+.o_msg {
+    background: rgba(210,210,210, .5);
+    padding: 5px 10px;
+    float: right;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.o_msg .user {
+    color: #1314ff;
+    float: right;
+    margin-left: 10px;
+}
