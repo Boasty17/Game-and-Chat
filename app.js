@@ -10,7 +10,9 @@ app.get('/', function (req, res) {
 });
 
 io.sockets.on('connection', function (client) {
-    console.log('on connect')
+
+    var clients = io.clients();
+    console.log(clients);
     client.on('message', function (message) {
         try {
             //посылаем сообщение себе
