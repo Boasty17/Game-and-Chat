@@ -43,7 +43,10 @@ $(document).ready(function () {
         }
         message_txt.focus();
     });
-
+    socket.on('count', function (data) {
+        console.log(data)
+        $('.msg_system').append('online:' + data)
+    });
     $("#message_btn").click(function () {
         var text = $("#message_text").val();
         if (text.length <= 0)
